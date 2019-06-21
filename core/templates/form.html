@@ -1,0 +1,21 @@
+<center>
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+    {% load staticfiles %}
+<body style="background-color:#B9A9E6">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+      <h2>Enter your Message</h2>
+      <br>
+       <br>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+
+  <p><a href="{% url 'home' %}">Return to home</a></p>
+
+{% endblock %}
+    </center>
